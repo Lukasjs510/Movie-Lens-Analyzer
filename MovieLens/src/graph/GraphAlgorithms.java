@@ -2,5 +2,8 @@ package graph;
 
 
 public class GraphAlgorithms {
-	// FILL IN
+	public dijkstrasAlgorithm(Graph<Integer> graph, int source){
+        
+	}
+	
 }

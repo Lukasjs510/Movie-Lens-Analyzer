@@ -33,6 +33,7 @@ lib/
 .project
 .metadata
 .settings
+.idea/workspace.xml
 
 # git
 .gitconfig

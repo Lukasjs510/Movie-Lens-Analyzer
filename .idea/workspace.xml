@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d3cacc-9727-4953-bce6-a9b52bb7a83b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/MovieLens/graph/Graph.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MovieLens/graph/GraphIfc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MovieLens/util/PriorityQueue$Pair.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MovieLens/util/PriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieLens/bin/analyzer/MovieLensAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/analyzer/MovieLensAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/bin/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/graph/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/src/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/graph/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MovieLens/analyzer/MovieLensAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MovieLens/analyzer/MovieLensAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MovieLens/graph/GraphAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MovieLens/graph/GraphAlgorithms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/graph/GraphAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/graph/GraphAlgorithms.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +57,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
+            <state relative-caret-position="87">
               <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -144,7 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542249913899" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542250090346" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunDashboard">
@@ -194,22 +184,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20695971" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20695971" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -258,7 +247,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
+        <state relative-caret-position="87">
           <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />

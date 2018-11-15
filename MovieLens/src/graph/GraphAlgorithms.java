@@ -8,8 +8,9 @@ public class GraphAlgorithms {
 	public static int[] dijkstrasAlgorithm(Graph<Integer> graph, int source){
 		PriorityQueue Q = new PriorityQueue();
         int[] dist = new int[graph.numVertices() + 1];
-        Integer prev = null;
-		for (int i = 0; i < dist.length; i++){
+        int[] prev = new int[graph.numVertices()];
+
+		for (int i = 1; i < dist.length; i++){
 			dist[i] = Integer.MAX_VALUE;
 		}
         dist[source] = 0;
@@ -21,27 +22,26 @@ public class GraphAlgorithms {
 
         while (!Q.isEmpty()){
             int u = Q.topElement();
-
-            Q.printHeap();
-            Q.printMap();
-
             Q.pop();
+
+            System.out.println(u);
+            Q.printHeap();
+
             List<Integer> adjList = graph.getNeighbors(u);
 
-            if (!adjList.isEmpty()) {
-                for (int i = 0; i < adjList.size(); i++) {
-                    int v = adjList.get(i);
-                    int alt = dist[u] + 1;
-                    if (alt < dist[v]) {
-                        dist[v] = alt;
-                        prev = u;
-                        Q.changePriority(v, alt);
-                    }
+            for (int i = 1; i <= adjList.size(); i++) {
+                int v = adjList.get(i);
+                int alt = dist[u] + 1;
+                if (alt < dist[v]) {
+                    dist[v] = alt;
+                    prev[v] = u;
+                    Q.changePriority(v, alt);
                 }
             }
         }
 
         System.out.println(Arrays.toString(dist));
+        System.out.println(Arrays.toString(prev));
         return dist;
 	}
 

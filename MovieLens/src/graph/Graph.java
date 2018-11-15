@@ -19,7 +19,7 @@ public class Graph<V> implements GraphIfc<V> {
 
 	public Graph(){
 		numEdges = 0;
-		graph = new HashMap<V, List<V>>();
+		graph = new HashMap<V,List<V>>();
 	}
 
 	@Override
@@ -41,6 +41,8 @@ public class Graph<V> implements GraphIfc<V> {
 	@Override
 	public void addEdge(V u, V v) {
 		if(!containsNode(u) || !containsNode(v)) {
+			System.out.println(u);
+			System.out.println(v);
 			throw new IllegalArgumentException();
 		}
 		numEdges++;

@@ -30,12 +30,12 @@ public class MovieLensAnalyzer {
 
 		DataLoader data = new DataLoader();
 		data.loadData(dir + dataDirS + movieLocS,  dir + dataDirS + ratingsLocS);
-		Graph<Movie> graph = new Graph<>();
+		Graph<Integer> graph = new Graph<>();
 		Map<Integer,Movie> movies = data.getMovies();
 		Map<Integer,Reviewer> reviewers = data.getReviewers();
 		//Fill graph
 		for (int i = 0; i < movies.size() + 1; i++) {
-			graph.addVertex(movies.get(i));
+			graph.addVertex(movies.get(i).getMovieId());
 		}
 		//Set edges
 		PriorityQueue priorityQueue = new PriorityQueue();
@@ -69,7 +69,7 @@ public class MovieLensAnalyzer {
 							ind++;
 						}
 						if (common == set) {
-							graph.addEdge(u, v);
+							graph.addEdge(u.getMovieId(), v.getMovieId());
 						}
 					}
 				}
@@ -93,7 +93,7 @@ public class MovieLensAnalyzer {
 							ind++;
 						}
 						if (common == set) {
-							graph.addEdge(u, v);
+							graph.addEdge(u.getMovieId(), v.getMovieId());
 						}
 					}
 				}
@@ -121,7 +121,7 @@ public class MovieLensAnalyzer {
 						}
 						if (pool > 0) {
 							if (common/pool >= 0.33) {
-								graph.addEdge(u, v);
+								graph.addEdge(u.getMovieId(), v.getMovieId());
 							}
 						}
 					}

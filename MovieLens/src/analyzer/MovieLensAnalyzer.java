@@ -135,5 +135,6 @@ public class MovieLensAnalyzer {
 		System.out.println(graph.numVertices());
 		System.out.println(graph.numEdges());
 		System.out.println("Hi there");
+
 	}
 }

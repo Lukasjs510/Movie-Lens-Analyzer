@@ -7,6 +7,7 @@ import graph.GraphAlgorithms;
 import util.DataLoader;
 import util.PriorityQueue;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class MovieLensAnalyzer {
 		//	System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
 		//	System.exit(-1);
 		//}
-		int option = 3;
+		int option = 1;
 		String movieLocS = "movies.csv/";
 		String ratingsLocS = "ratings.csv/";
 		String dataDirS = "/MovieLens/src/ml-latest-small/";
@@ -34,7 +35,7 @@ public class MovieLensAnalyzer {
 		Map<Integer,Movie> movies = data.getMovies();
 		Map<Integer,Reviewer> reviewers = data.getReviewers();
 		//Fill graph
-		for (int i = 0; i < movies.size() + 1; i++) {
+		for (int i = 1; i < movies.size() + 1; i++) {
 			graph.addVertex(movies.get(i).getMovieId());
 		}
 		//Set edges
@@ -130,8 +131,9 @@ public class MovieLensAnalyzer {
 		}
 
 		System.out.println(graph);
+		int[][] shortestPaths = GraphAlgorithms.floydWarshall(graph);
 		System.out.println(graph.numVertices());
 		System.out.println(graph.numEdges());
-
+		System.out.println("Hi there");
 	}
 }

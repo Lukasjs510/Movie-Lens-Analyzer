@@ -11,25 +11,22 @@ public class GraphAlgorithms {
         int[] prev = new int[graph.numVertices()];
 
 		for (int i = 1; i < dist.length; i++){
-			dist[i] = Integer.MAX_VALUE;
+			dist[i] = Integer.MAX_VALUE - 1;
 		}
         dist[source] = 0;
 
 
 		for (int v = 1; v <= graph.numVertices(); v ++){
-            Q.push(v, dist[v]);
+            Q.push(dist[v], v);
         }
 
         while (!Q.isEmpty()){
             int u = Q.topElement();
             Q.pop();
 
-            System.out.println(u);
-            Q.printHeap();
-
             List<Integer> adjList = graph.getNeighbors(u);
-
-            for (int i = 1; i <= adjList.size(); i++) {
+            int size = adjList.size();
+            for (int i = 0; i < size; i++) {
                 int v = adjList.get(i);
                 int alt = dist[u] + 1;
                 if (alt < dist[v]) {

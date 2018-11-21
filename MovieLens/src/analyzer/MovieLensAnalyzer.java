@@ -7,12 +7,10 @@ import graph.GraphAlgorithms;
 import util.DataLoader;
 import util.PriorityQueue;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import java.util.Map;
 
 public class MovieLensAnalyzer {
-	
+
 	public static void main(String[] args){
 
 		// Your program should take two command-line arguments: 
@@ -28,7 +26,6 @@ public class MovieLensAnalyzer {
 		String ratingsLocS = "ratings.csv/";
 		String dataDirS = "/MovieLens/src/ml-latest-small/";
 		String dir = System.getProperty("user.dir");
-
 		DataLoader data = new DataLoader();
 		data.loadData(dir + dataDirS + movieLocS,  dir + dataDirS + ratingsLocS);
 		Graph<Integer> graph = new Graph<>();
@@ -131,10 +128,10 @@ public class MovieLensAnalyzer {
 		}
 
 		System.out.println(graph);
-		int[][] shortestPaths = GraphAlgorithms.floydWarshall(graph);
 		System.out.println(graph.numVertices());
 		System.out.println(graph.numEdges());
-		System.out.println("Hi there");
+		String path = GraphAlgorithms.dispShortestPath(movies,graph,1,575);
+		System.out.println(path);
 
 	}
 }

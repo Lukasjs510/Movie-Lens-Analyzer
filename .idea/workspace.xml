@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10d3cacc-9727-4953-bce6-a9b52bb7a83b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +20,7 @@
     <session id="-886411762">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -82,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+            <state relative-caret-position="-1785">
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,19 +95,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MovieLens/src/util/DataLoader.java">
+        <entry file="file://$PROJECT_DIR$/MovieLens/src/data/Movie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="529">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MovieLens/src/util/DataLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="133" column="31" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+            <state relative-caret-position="333">
+              <caret line="177" column="20" lean-forward="true" selection-end-line="184" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,7 +155,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,10 +201,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542692231796" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542932376762" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunDashboard">
@@ -245,10 +254,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19386107" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14224665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -344,25 +353,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MovieLens/src/util/DataLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
+        <state relative-caret-position="368">
           <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="133" column="31" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
+        <state relative-caret-position="-1785">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
+    <entry file="file://$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        <state relative-caret-position="333">
+          <caret line="177" column="20" lean-forward="true" selection-end-line="184" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

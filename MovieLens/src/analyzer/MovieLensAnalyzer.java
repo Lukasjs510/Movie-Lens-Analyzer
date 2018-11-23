@@ -165,15 +165,11 @@ public class MovieLensAnalyzer {
 			int option = scan.nextInt();
 			if(option == 1){
 
-				break;
 			} else if (option == 2){
 
-				break;
 			} else if (option == 3){
 
-				break;
 			} else if (option == 4){
-
 				break;
 			} else {
 				System.out.println("Invalid input.");
@@ -182,3 +178,4 @@ public class MovieLensAnalyzer {
 	}
 
 }
+

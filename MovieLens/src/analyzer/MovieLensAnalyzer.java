@@ -8,23 +8,32 @@ import util.DataLoader;
 import util.PriorityQueue;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Scanner;
 
 public class MovieLensAnalyzer {
 
 	public static void main(String[] args){
-
-		// Your program should take two command-line arguments: 
+		System.out.println("========== Welcome to MovieLens Analyzer ==========");
+		// Your program should take two command-line arguments:
 		// 1. A ratings file
 		// 2. A movies file with information on each movie e.g. the title and genres
-		
+
 		//if(args.length != 2){
 		//	System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
 		//	System.exit(-1);
 		//}
-		int option = 1;
+
 		String movieLocS = "movies.csv/";
 		String ratingsLocS = "ratings.csv/";
 		String dataDirS = "/MovieLens/src/ml-latest-small/";
+
+		System.out.println("The files being analyzed are: \n" + ratingsLocS + "\n" + movieLocS);
+		Graph graph = queryGraph(dataDirS, ratingsLocS, movieLocS);
+		queryGraphActions(graph);
+
+	}
+
+	private static Graph queryGraph(String dataDirS, String ratingsLocS, String movieLocS){
 		String dir = System.getProperty("user.dir");
 		DataLoader data = new DataLoader();
 		data.loadData(dir + dataDirS + movieLocS,  dir + dataDirS + ratingsLocS);
@@ -47,6 +56,17 @@ public class MovieLensAnalyzer {
 			userWeight.add(reviewers.get(p));
 			priorityQueue.pop();
 		}
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("There are 3 choices for defining adjacency: " +
+				"\n[Option 1] u and v are adjacent if the same 12 users gave the same rating to both movies" +
+				"\n[Option 2] u and v are adjacent if the same 12 users watched both movies (regardless of rating)" +
+				"\n[Option 3] u is adjacent to v if at least 33.0% of the users users that rated u gave the same rating to v" +
+				"\nChose an option to build a graph (1-3):");
+		int option = scan.nextInt();
+
+		System.out.print("Creating graph...");
+
 		//Option 1 ~ 10 seconds
 		if (option == 1) {
 			for (Integer a : movies.keySet()) {
@@ -97,7 +117,7 @@ public class MovieLensAnalyzer {
 				}
 			}
 		}
-		else {
+		else if (option == 3) {
 			//Option 3 ~ 30 seconds
 			for (Integer a : movies.keySet()) {
 				for (Integer b : movies.keySet()) {
@@ -125,13 +145,40 @@ public class MovieLensAnalyzer {
 					}
 				}
 			}
+		} else {
+			System.out.println("Invalid input.");
 		}
+		System.out.println("the graph has been created.");
 
-		System.out.println(graph);
-		System.out.println(graph.numVertices());
-		System.out.println(graph.numEdges());
-		String path = GraphAlgorithms.dispShortestPath(movies,graph,1,575);
-		System.out.println(path);
-
+		return graph;
 	}
+
+	private static void queryGraphActions(Graph graph){
+		Scanner scan = new Scanner(System.in);
+		while(true){
+			System.out.println("\nGraph Actions: " +
+					"\n[Option 1] Print out statistics about the graph" +
+					"\n[Option 2] Print node information" +
+					"\n[Option 3] Display shortest path between two nodes" +
+					"\n[Option 4] Quit" +
+					"\nChose an option (1-4):");
+			int option = scan.nextInt();
+			if(option == 1){
+
+				break;
+			} else if (option == 2){
+
+				break;
+			} else if (option == 3){
+
+				break;
+			} else if (option == 4){
+
+				break;
+			} else {
+				System.out.println("Invalid input.");
+			}
+		}
+	}
+
 }

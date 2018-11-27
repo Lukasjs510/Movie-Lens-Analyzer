@@ -139,4 +139,16 @@ public class GraphAlgorithms {
         }
         return str;
     }
+	
+    public static void nodeInfo(Map<Integer,Movie> movies, Graph graph, int index){
+        List<Integer> adjIndex = graph.getNeighbors(index);
+        Movie movie = movies.get(index);
+        System.out.println(movie.toString());
+        System.out.println("Neighbors: ");
+        for (int i = 1; i <= adjIndex.size(); i++){
+            Movie m = movies.get(adjIndex.get(i-1));
+            String name = m.getTitle();
+            System.out.println("    " + name);
+        }
+    }
 }

@@ -171,6 +171,7 @@ public class MovieLensAnalyzer {
 			} else if (option == 2){
 				System.out.println("Enter movie ID(1-1000): ");
 				int movieID = scan.nextInt();
+				GraphAlgorithms.nodeInfo(movies, graph, movieID);
 			} else if (option == 3){
 				System.out.println("Enter starting node: ");
 				int startingNode = scan.nextInt();

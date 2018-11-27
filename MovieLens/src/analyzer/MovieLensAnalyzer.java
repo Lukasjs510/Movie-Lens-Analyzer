@@ -180,6 +180,7 @@ public class MovieLensAnalyzer {
 				po = GraphAlgorithms.dispShortestPath(movies, graph, startingNode, endingNode);
 				System.out.println(po);
 			} else if (option == 4){
+				System.out.println("To The Heights!");
 				break;
 			} else {
 				System.out.println("Invalid input.");

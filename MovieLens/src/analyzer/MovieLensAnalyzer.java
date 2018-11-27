@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class MovieLensAnalyzer {
+	private static Map<Integer,Movie> movies;
 
 	public static void main(String[] args){
 		System.out.println("========== Welcome to MovieLens Analyzer ==========");
@@ -38,7 +39,7 @@ public class MovieLensAnalyzer {
 		DataLoader data = new DataLoader();
 		data.loadData(dir + dataDirS + movieLocS,  dir + dataDirS + ratingsLocS);
 		Graph<Integer> graph = new Graph<>();
-		Map<Integer,Movie> movies = data.getMovies();
+		movies = data.getMovies();
 		Map<Integer,Reviewer> reviewers = data.getReviewers();
 		//Fill graph
 		for (int i = 1; i < movies.size() + 1; i++) {
@@ -163,17 +164,21 @@ public class MovieLensAnalyzer {
 					"\n[Option 4] Quit" +
 					"\nChose an option (1-4):");
 			int option = scan.nextInt();
+			String po = "";
 			if(option == 1){
-
-				break;
+				po = GraphAlgorithms.graphInfo(graph);
+				System.out.println(po);
 			} else if (option == 2){
-
-				break;
+				System.out.println("Enter movie ID(1-1000): ");
+				int movieID = scan.nextInt();
 			} else if (option == 3){
-
-				break;
+				System.out.println("Enter starting node: ");
+				int startingNode = scan.nextInt();
+				System.out.println("Enter ending node: ");
+				int endingNode = scan.nextInt();
+				po = GraphAlgorithms.dispShortestPath(movies, graph, startingNode, endingNode);
+				System.out.println(po);
 			} else if (option == 4){
-
 				break;
 			} else {
 				System.out.println("Invalid input.");

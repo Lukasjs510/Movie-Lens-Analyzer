@@ -40,8 +40,6 @@ public class GraphAlgorithms {
             }
         }
 
-        System.out.println(Arrays.toString(dist));
-        System.out.println(Arrays.toString(prev));
         return prev;
     }
 

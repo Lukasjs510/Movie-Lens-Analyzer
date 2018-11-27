@@ -52,7 +52,7 @@ public class MovieLensAnalyzer {
 			Reviewer r = reviewers.get(i);
 			priorityQueue.push(r.numRated(),r.getReviewerId());
 		}
-		for (int i = 0; i < priorityQueue.size(); i++) {
+		while (!priorityQueue.isEmpty()) {
 			int p = priorityQueue.topElement();
 			userWeight.add(reviewers.get(p));
 			priorityQueue.pop();
@@ -78,7 +78,7 @@ public class MovieLensAnalyzer {
 						int common = 0;
 						int ind = 0;
 						int set = 12;
-						while (common < set && ind < userWeight.size() - 1) {
+						while (common < set && ind < userWeight.size()) {
 							Reviewer r = userWeight.get(ind);
 							if (r.ratedMovie(u.getMovieId()) && r.ratedMovie(v.getMovieId())) {
 								if (r.getMovieRating(u.getMovieId()) == r.getMovieRating(v.getMovieId())) {

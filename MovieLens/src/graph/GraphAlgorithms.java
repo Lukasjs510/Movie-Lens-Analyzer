@@ -1,17 +1,16 @@
 package graph;
 
 import util.PriorityQueue;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
+
+import java.util.*;
+
 import data.Movie;
 
 public class GraphAlgorithms {
     public static int[] dijkstrasAlgorithm(Graph<Integer> graph, int source){
         PriorityQueue Q = new PriorityQueue();
         int[] dist = new int[graph.numVertices() + 1];
-        int[] prev = new int[graph.numVertices()];
+        int[] prev = new int[graph.numVertices() + 1];
 
         for (int i = 1; i < dist.length; i++){
             dist[i] = Integer.MAX_VALUE - 1;
@@ -80,9 +79,9 @@ public class GraphAlgorithms {
 
     public static String graphInfo(Graph g) {
         String str = "";
-        int numVerts = g.numVertices();
+        double numVerts = g.numVertices();
         str += "|V| = " + numVerts + " vertices \n";
-        int numEdge = g.numEdges();
+        double numEdge = g.numEdges();
         str += "|E| = " + numEdge + " edges \n";
         double density = (numEdge / (numVerts * numVerts - 1));
         str += "Density = " + density + "\n";
@@ -100,8 +99,8 @@ public class GraphAlgorithms {
         int maxPath = 0;
         int a = 0;
         int b = 0;
-        int numPaths = 0;
-        int totalWeight = 0;
+        double numPaths = 0;
+        double totalWeight = 0;
         for (int i = 0; i < shortestPaths.length; i++) {
             for (int j = 0; j < shortestPaths[i].length; j++) {
                 int path = shortestPaths[i][j];
@@ -125,16 +124,16 @@ public class GraphAlgorithms {
     public static String dispShortestPath(Map<Integer,Movie> movies, Graph g, int a, int b) {
         int[] prev = dijkstrasAlgorithm(g,a);
         int end = b;
-        Stack path = new Stack();
+        ArrayList<Integer> path = new ArrayList<>();
         path.add(end);
         while (prev[end] != 0) {
             end = prev[end];
-            path.push(end);
+            path.add(end);
         }
         String str = "";
-        Movie m = movies.get(path.pop());
-        while(!path.empty()) {
-            Movie m2 = movies.get(path.pop());
+        Movie m = movies.get(path.get(0));
+        for (int i = 1; i < path.size(); i++) {
+            Movie m2 = movies.get(path.get(i));
             str += m.getTitle() + " ===> " + m2.getTitle() + "\n";
             m = m2;
         }

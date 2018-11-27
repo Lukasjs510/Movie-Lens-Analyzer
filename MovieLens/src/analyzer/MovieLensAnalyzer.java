@@ -12,25 +12,18 @@ public class MovieLensAnalyzer {
 	private static Map<Integer,Movie> movies;
 
 	public static void main(String[] args){
-		// Your program should take two command-line arguments:
-		// 1. A ratings file
-		// 2. A movies file with information on each movie e.g. the title and genres
-//		if(args.length != 2){
-//			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
-//			System.exit(-1);
-//		}
-
+		if(args.length != 2){
+			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
+			System.exit(-1);
+		}
 		System.out.println("========== Welcome to MovieLens Analyzer ==========");
-		String movieLocS = "movies.csv/";
-		String ratingsLocS = "ratings.csv/";
-//        String movieLocS = args[0];
-//		String ratingsLocS = args[1];
-		String dataDirS = "/MovieLens/src/ml-latest-small/";
+        String movieLocS = args[0];
+		String ratingsLocS = args[1];
+		String dataDirS = "/src/ml-latest-small/";
 
 		System.out.println("The files being analyzed are: \n" + ratingsLocS + "\n" + movieLocS);
 		Graph graph = queryGraph(dataDirS, ratingsLocS, movieLocS);
 		queryGraphActions(graph);
-
 	}
 
 	private static Graph queryGraph(String dataDirS, String ratingsLocS, String movieLocS){
@@ -149,7 +142,6 @@ public class MovieLensAnalyzer {
 			System.out.println("Invalid input.");
 		}
 		System.out.println("the graph has been created.");
-
 		return graph;
 	}
 
@@ -176,6 +168,7 @@ public class MovieLensAnalyzer {
 			} else if (option == 2){
 				System.out.println("Enter movie ID(1-1000): ");
 				int movieID = scan.nextInt();
+				GraphAlgorithms.nodeInfo(movies, graph, movieID);
 			} else if (option == 3){
 				System.out.println("Enter starting node: ");
 				int startingNode = scan.nextInt();

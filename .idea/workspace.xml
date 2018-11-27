@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d3cacc-9727-4953-bce6-a9b52bb7a83b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/analyzer/MovieLensAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/analyzer/MovieLensAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/data/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/data/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/data/Reviewer.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/data/Reviewer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/graph/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/graph/GraphAlgorithms.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/graph/GraphAlgorithms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/graph/GraphIfc.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/graph/GraphIfc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/util/DataLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/util/DataLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/util/PriorityQueue$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/util/PriorityQueue$Pair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieLens/bin/util/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/bin/util/PriorityQueue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,12 +58,12 @@
     <session id="-1373196964">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5130" />
+          <entry key="java" value="5162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5130" />
+          <entry key="JAVA" value="5162" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -89,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="25" selection-start-line="25" selection-start-column="2" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="233">
+              <caret line="170" column="56" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3956">
-              <caret line="172" column="61" selection-start-line="172" selection-start-column="61" selection-end-line="172" selection-end-column="61" />
+            <state relative-caret-position="879">
+              <caret line="171" column="25" lean-forward="true" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -200,7 +207,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543349390217" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543350636295" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RunDashboard">
@@ -266,7 +273,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.25068492" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.16712329" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50039715" side_tool="true" weight="0.32846716" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32876712" />
@@ -327,13 +334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MovieLens/src/data/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MovieLens/src/data/Reviewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -355,18 +355,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MovieLens/src/graph/GraphAlgorithms.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3956">
-          <caret line="172" column="61" selection-start-line="172" selection-start-column="61" selection-end-line="172" selection-end-column="61" />
+        <state relative-caret-position="879">
+          <caret line="171" column="25" lean-forward="true" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MovieLens/src/data/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MovieLens/src/analyzer/MovieLensAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="25" selection-start-line="25" selection-start-column="2" selection-end-line="26" selection-end-column="37" />
+        <state relative-caret-position="233">
+          <caret line="170" column="56" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -151,4 +151,27 @@ public class GraphAlgorithms {
             System.out.println("    " + name);
         }
     }
+
+    public static void scroll(int index, Map<Integer,Movie> movies){
+        int ind = index;
+        Movie movie = movies.get(ind);
+        System.out.println(movie.toString());
+        while(true) {
+            System.out.println("\nEnter \"next\" and \"prev\" to browse movies or \"q\" to exit: ");
+            if (com.equals("Next") || com.equals("Next ") || com.equals("next") || com.equals("next ")) {
+                ind ++;
+                Movie next = movies.get(ind);
+                System.out.println(next.toString());
+            } else if (com.equals("Prev") || com.equals("Prev ") || com.equals("prev") || com.equals("prev ")){
+                ind --;
+                Movie prev = movies.get(ind);
+                System.out.println(prev.toString());
+            } else if (com.equals("q")){
+                System.out.println("Scroll ya later!");
+                break;
+            } else {
+                System.out.println("Invalid Input");
+            }
+        }
+    }
 }

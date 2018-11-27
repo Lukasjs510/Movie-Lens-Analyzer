@@ -6,26 +6,25 @@ import graph.Graph;
 import graph.GraphAlgorithms;
 import util.DataLoader;
 import util.PriorityQueue;
-
 import java.util.*;
 
-//To add: Search that can query based off movie title, and movie genre
 public class MovieLensAnalyzer {
 	private static Map<Integer,Movie> movies;
 
 	public static void main(String[] args){
-		System.out.println("========== Welcome to MovieLens Analyzer ==========");
 		// Your program should take two command-line arguments:
 		// 1. A ratings file
 		// 2. A movies file with information on each movie e.g. the title and genres
+//		if(args.length != 2){
+//			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
+//			System.exit(-1);
+//		}
 
-		//if(args.length != 2){
-		//	System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
-		//	System.exit(-1);
-		//}
-
+		System.out.println("========== Welcome to MovieLens Analyzer ==========");
 		String movieLocS = "movies.csv/";
 		String ratingsLocS = "ratings.csv/";
+//        String movieLocS = args[0];
+//		String ratingsLocS = args[1];
 		String dataDirS = "/MovieLens/src/ml-latest-small/";
 
 		System.out.println("The files being analyzed are: \n" + ratingsLocS + "\n" + movieLocS);
@@ -169,7 +168,7 @@ public class MovieLensAnalyzer {
 			int option = scan.nextInt();
 			String po = "";
 			if (option == 0) {
-				search(movies);
+				GraphAlgorithms.search(movies);
 			}
 			else if(option == 1){
 				po = GraphAlgorithms.graphInfo(graph);
@@ -195,25 +194,25 @@ public class MovieLensAnalyzer {
 				for (String s : List) {
 					liked.add(Integer.parseInt(s));
 				}
-				ArrayList<Integer> listOfRec  = reccomendations(movies,graph,liked);
+				ArrayList<Integer> listOfRec = GraphAlgorithms.reccomendations(movies,graph,liked);
 				if (listOfRec.size() > 10) {
 					int size;
 					if (listOfRec.size() < 25) {
 						size = 10;
 						System.out.println("Our reccomendations for you include: ");
-						display(listOfRec,size, movies);
+						GraphAlgorithms.display(listOfRec,size, movies);
 					}
 					else if (listOfRec.size() > 25 && listOfRec.size() < 50) {
 						System.out.println("How many would you like displayed at a time? (10, 25): ");
 						size = scan.nextInt();
 						System.out.println("Our reccomendations for you include: ");
-						display(listOfRec,size, movies);
+						GraphAlgorithms.display(listOfRec,size, movies);
 					}
 					else {
 						System.out.println("How many would you like displayed at a time? (10, 25, 50): ");
 						size = scan.nextInt();
 						System.out.println("Our reccomendations for you include: ");
-						display(listOfRec,size, movies);
+						GraphAlgorithms.display(listOfRec,size, movies);
 					}
 				}
 				else {
@@ -228,238 +227,10 @@ public class MovieLensAnalyzer {
 			else if (option == 6) {
 				System.out.println("How many would you like displayed at a time? (10, 25, 50): ");
 				int size = scan.nextInt();
-				scroll(movies, size);
+				GraphAlgorithms.scroll(movies, size);
 			}
 			else {
 				System.out.println("Invalid input.");
-			}
-		}
-	}
-
-	/*
-	A strong reccomendation might be a movie that not only appears on multiple shortest paths, but also as a neighbor
-	to multiple liked movies
-	*/
-	public static ArrayList<Integer> reccomendations(Map<Integer,Movie> movies, Graph g, ArrayList<Integer> A) {
-		ArrayList<Integer> res;
-		if (A.size() > 2) {
-			ArrayList<int[]> noWay = new ArrayList<>();
-			ArrayList<List<Integer>> neighbors = new ArrayList<>();
-			for (int a : A) {
-				noWay.add(GraphAlgorithms.dijkstrasAlgorithm(g, a));
-				neighbors.add(g.getNeighbors(a));
-			}
-			int[] one = multiIntersection(noWay);
-			int[] two = howdyNeighbor(neighbors);
-			ArrayList<int[]> fin = new ArrayList<>();
-			fin.add(one);
-			fin.add(two);
-			int[] hold = multiIntersection(fin);
-			ArrayList<Integer> rec = new ArrayList<>();
-			for (int i = 0; i < hold.length; i++) {
-				if (hold[i] > 1) {
-					rec.add(i + 1);
-				}
-			}
-			res = rec;
-		}
-		else {
-			int[] prev = GraphAlgorithms.dijkstrasAlgorithm(g, A.get(0));
-			int end = A.get(1);
-			ArrayList<Integer> path = new ArrayList<>();
-			path.add(end);
-			while (prev[end] != 0) {
-				end = prev[end];
-				path.add(end);
-			}
-			res = path;
-		}
-		return res;
-	}
-
-	public static int[] multiIntersection(ArrayList<int[]> A) {
-		int[] m = new int[movies.size() + 1];
-		for (int[] a : A) {
-			for (int i = 0; i < a.length - 1; i++) {
-				if (a[i] > 0) {
-					m[i] = m[i] + 1;
-				}
-			}
-		}
-		return m;
-	}
-
-	public static int[] howdyNeighbor(ArrayList<List<Integer>> A) {
-		int[] m = new int[movies.size() + 1];
-		for (List<Integer> a : A) {
-			for (int t : a) {
-				m[t] = m[t] + 1;
-			}
-		}
-		return m;
-	}
-
-	public static void display(ArrayList<Integer> list, int size, Map<Integer, Movie> movies) {
-		Scanner scan = new Scanner(System.in);
-		boolean displaying = true;
-		int range = 0;
-		int top = size;
-		while (displaying) {
-			String str = "";
-			for (int i = range; i < top; i++) {
-				str += movies.get(list.get(i));
-			}
-			System.out.println(str);
-			boolean deciding = true;
-			while (deciding) {
-				System.out.println("Displaying selections " + range + " through " + top + " of " +
-						list.size() + " total reccomendations");
-				System.out.println("Previous, Next, or Quit: ");
-				String line = scan.nextLine();
-				line.toLowerCase();
-				if (line.equals("previous") || line.equals("prev") || line.equals("p")) {
-					if (range == 0) {
-						System.out.println("No prior suggestions");
-					}
-					else if (range - size < 0){
-				    	int over = range - size;
-				    	over = Math.abs(over);
-				    	range = range - size + over;
-				    	top = top - size + over;
-				    	deciding = false;
-					}
-					else {
-						range = range - size;
-						top = top - size;
-						deciding = false;
-					}
-				} else if (line.equals("next") || line.equals("n")) {
-					if (top == list.size()) {
-						System.out.println("No further Suggestions");
-					}
-					else if (top + size > list.size()){
-						int over = (top + size) - list.size();
-						range = range + size - over;
-						top = top + size - over;
-						deciding = false;
-					}
-					else {
-						range = range + size;
-						top = top + size;
-						deciding = false;
-					}
-				} else if (line.equals("quit") || line.equals("q")) {
-					deciding = false;
-					displaying = false;
-				} else {
-					System.out.println("Unrecognized command");
-				}
-			}
-		}
-	}
-
-	public static void scroll(Map<Integer, Movie> movies, int size) {
-		Scanner scan = new Scanner(System.in);
-		boolean displaying = true;
-		int range = 1;
-		int top = size + 1;
-		while (displaying) {
-			String str = "";
-			for (int i = range; i < top; i++) {
-				str += movies.get(i);
-			}
-			System.out.println(str);
-			boolean deciding = true;
-			while (deciding) {
-				System.out.println("Displaying movies " + range + " through " + (top - 1) + " of " +
-						movies.size() + " total Movies");
-				System.out.println("Previous, Next, or Quit: ");
-				String line = scan.nextLine();
-				line.toLowerCase();
-				if (line.equals("previous") || line.equals("prev") || line.equals("p")) {
-					if (range == 1) {
-						System.out.println("No prior movies");
-					}
-					else if (range - size < 1){
-						int over = range - size;
-						over = Math.abs(over);
-						range = range - size + over;
-						top = top - size + over;
-						deciding = false;
-					}
-					else {
-						range = range - size;
-						top = top - size;
-						deciding = false;
-					}
-				} else if (line.equals("next") || line.equals("n")) {
-					if (top == movies.size()) {
-						System.out.println("No further Suggestions");
-					}
-					else if (top + size > movies.size()){
-						int over = (top + size) - movies.size();
-						range = range + size - over;
-						top = top + size - over;
-						deciding = false;
-					}
-					else {
-						range = range + size;
-						top = top + size;
-						deciding = false;
-					}
-				} else if (line.equals("quit") || line.equals("q")) {
-					deciding = false;
-					displaying = false;
-				} else {
-					System.out.println("Unrecognized command");
-				}
-			}
-		}
-	}
-
-	public static void search(Map<Integer, Movie> movies) {
-		Scanner scan = new Scanner(System.in);
-		boolean searching = true;
-		while (searching) {
-			System.out.println("Would you like to search based on Title or Genre? (Q or quit to end searh)");
-			String resp = scan.nextLine();
-			resp = resp.toLowerCase();
-			if (resp.equals("t") || resp.equals("title")) {
-				String found;
-				found = "";
-				System.out.println("Enter search term:");
-				String look = scan.nextLine();
-				look = look.toLowerCase();
-				for (Integer i : movies.keySet()) {
-					Movie m = movies.get(i);
-					if (m.getTitle().toLowerCase().contains(look)) {
-						found += m;
-					}
-				}
-				System.out.println("\n" + found);
-			} else if (resp.equals("g") || resp.equals("genre")) {
-				String found;
-				found = "";
-				System.out.println("Enter search term:");
-				String look = scan.nextLine();
-				look = look.toLowerCase();
-				for (Integer i : movies.keySet()) {
-					Movie m = movies.get(i);
-					Set<String> S = m.getGenres();
-					for (String s : S) {
-						String g = s.toLowerCase();
-						if (g.contains(look)) {
-							found += m;
-						}
-					}
-				}
-				System.out.println("\n" + found);
-			}
-			else if (resp.equals("q") || resp.equals("quit")) {
-				searching = false;
-			}
-			else {
-				System.out.println("Unrecognized Command");
 			}
 		}
 	}

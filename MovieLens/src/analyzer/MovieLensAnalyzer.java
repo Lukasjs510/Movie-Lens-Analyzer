@@ -12,14 +12,17 @@ public class MovieLensAnalyzer {
 	private static Map<Integer,Movie> movies;
 
 	public static void main(String[] args){
-		if(args.length != 2){
-			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
-			System.exit(-1);
-		}
+//		if(args.length != 2){
+//			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
+//			System.exit(-1);
+//		}
 		System.out.println("========== Welcome to MovieLens Analyzer ==========");
-        String movieLocS = args[0];
-		String ratingsLocS = args[1];
-		String dataDirS = "/src/ml-latest-small/";
+//        String movieLocS = args[0];
+//		String ratingsLocS = args[1];
+//		String dataDirS = "/src/ml-latest-small/";
+		String movieLocS = "movies.csv/";
+		String ratingsLocS = "ratings.csv/";
+		String dataDirS = "/MovieLens/src/ml-latest-small/";
 
 		System.out.println("The files being analyzed are: \n" + ratingsLocS + "\n" + movieLocS);
 		Graph graph = queryGraph(dataDirS, ratingsLocS, movieLocS);
@@ -158,7 +161,7 @@ public class MovieLensAnalyzer {
 					"\n[Option 6] Explore Movies" +
 					"\nChose an option (1-6):");
 			int option = scan.nextInt();
-			String po = "";
+			String po;
 			if (option == 0) {
 				GraphAlgorithms.search(movies);
 			}
@@ -218,7 +221,7 @@ public class MovieLensAnalyzer {
 				}
 			}
 			else if (option == 6) {
-				System.out.println("How many would you like displayed at a time? (10, 25, 50): ");
+				System.out.println("How many would you like displayed at a time? (1-100): ");
 				int size = scan.nextInt();
 				GraphAlgorithms.scroll(movies, size);
 			}

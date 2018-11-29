@@ -1,2 +1,0 @@
-# OTPHJ
-Pants on

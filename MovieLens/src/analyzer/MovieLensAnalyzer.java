@@ -21,7 +21,7 @@ public class MovieLensAnalyzer {
 			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
 			System.exit(-1);
 		}
-        String movieLocS = args[0];
+        	String movieLocS = args[0];
 		String ratingsLocS = args[1];
 		String dataDirS = "/src/ml-latest-small/";
 //		String movieLocS = "movies.csv/";

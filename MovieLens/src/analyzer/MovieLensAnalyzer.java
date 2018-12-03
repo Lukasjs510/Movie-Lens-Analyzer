@@ -17,16 +17,16 @@ public class MovieLensAnalyzer {
 
 	public static void main(String[] args){
 		System.out.println("========== Welcome to MovieLens Analyzer ==========");
-		if(args.length != 2){
-			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
-			System.exit(-1);
-		}
-        	String movieLocS = args[0];
-		String ratingsLocS = args[1];
-		String dataDirS = "/src/ml-latest-small/";
-//		String movieLocS = "movies.csv/";
-//		String ratingsLocS = "ratings.csv/";
-//		String dataDirS = "/MovieLens/src/ml-latest-small/";
+// 		if(args.length != 2){
+// 			System.err.println("Usage: java MovieLensAnalyzer [ratings_file] [movie_title_file]");
+// 			System.exit(-1);
+// 		}
+//         	String movieLocS = args[0];
+// 		String ratingsLocS = args[1];
+// 		String dataDirS = "/src/ml-latest-small/";
+		String movieLocS = "movies.csv/";
+		String ratingsLocS = "ratings.csv/";
+		String dataDirS = "/MovieLens/src/ml-latest-small/";
 
 		System.out.println("The files being analyzed are: \n" + ratingsLocS + "\n" + movieLocS);
 		Graph graph = queryGraph(dataDirS, ratingsLocS, movieLocS);
